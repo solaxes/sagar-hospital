@@ -9,7 +9,6 @@ import {
   Award,
   Stethoscope,
   Activity,
-  Clock,
 } from "lucide-react";
 
 export function AboutHero() {
