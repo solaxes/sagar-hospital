@@ -245,7 +245,7 @@ export function HeroSection() {
       {Array.from({ length: 15 }).map((_, index) => (
         <motion.div
           key={`ring-${index}`}
-          className="absolute border-2 border-red-500/60 rounded-full"
+          className="absolute border-2 border-red-500/30 rounded-full"
           style={{
             left: `${(index * 60 + 10) % 100}%`,
             top: `${(index * 40 + 20) % 100}%`,
