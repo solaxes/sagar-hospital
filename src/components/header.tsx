@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -33,14 +34,16 @@ const navigation = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Top bar */}
       <div className="bg-hospital-primary text-white py-2">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center space-x-4">
+          {/* Desktop Layout */}
+          <div className="hidden md:flex items-center justify-between text-sm">
+            <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
                 <span>+91 98881 06555</span>
@@ -64,6 +67,37 @@ export function Header() {
                   <Moon className="h-4 w-4" />
                 )}
               </Button>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="md:hidden">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <span className="text-sm font-medium">+91 98881 06555</span>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="text-white hover:bg-white/20 h-8 w-8 p-0"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+              </Button>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4" />
+                <span className="text-xs">info@sagarhospital.com</span>
+              </div>
+              <div className="bg-white/20 px-2 py-1 rounded-full">
+                <span className="text-xs font-medium">24x7 Emergency</span>
+              </div>
             </div>
           </div>
         </div>
@@ -91,13 +125,22 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => {
               const Icon = item.icon;
+              const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 text-foreground hover:text-hospital-primary transition-colors font-medium group"
+                  className={`flex items-center space-x-2 transition-colors font-medium group ${
+                    isActive
+                      ? "text-hospital-primary border-b-2 border-hospital-primary pb-1"
+                      : "text-foreground hover:text-hospital-primary"
+                  }`}
                 >
-                  <Icon className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                  <Icon
+                    className={`h-4 w-4 transition-transform ${
+                      isActive ? "scale-110" : "group-hover:scale-110"
+                    }`}
+                  />
                   <span>{item.name}</span>
                 </Link>
               );
@@ -151,15 +194,27 @@ export function Header() {
                   <nav className="space-y-2">
                     {navigation.map((item) => {
                       const Icon = item.icon;
+                      const isActive = pathname === item.href;
                       return (
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="flex items-center space-x-3 px-4 py-3 rounded-lg text-foreground hover:bg-hospital-primary/10 hover:text-hospital-primary transition-all duration-200 group"
+                          className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
+                            isActive
+                              ? "bg-hospital-primary text-white"
+                              : "text-foreground hover:bg-hospital-primary/10 hover:text-hospital-primary"
+                          }`}
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          <Icon className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                          <Icon
+                            className={`h-5 w-5 transition-transform ${
+                              isActive ? "scale-110" : "group-hover:scale-110"
+                            }`}
+                          />
                           <span className="font-medium">{item.name}</span>
+                          {isActive && (
+                            <div className="ml-auto h-2 w-2 bg-white rounded-full"></div>
+                          )}
                         </Link>
                       );
                     })}
