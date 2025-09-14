@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Clock, Shield, Zap, Heart, AlertTriangle } from "lucide-react";
 
@@ -86,7 +85,7 @@ export function EmergencyServices() {
                       Medical Emergency?
                     </h3>
                     <p className="text-white/90">
-                      Don't wait - call our emergency number immediately
+                      Don&apos;t wait - call our emergency number immediately
                     </p>
                   </div>
                 </div>
@@ -106,12 +105,12 @@ export function EmergencyServices() {
 
         {/* Emergency Features */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {emergencyFeatures.map((feature, index) => (
+          {emergencyFeatures.map((feature) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
               <Card className="h-full hover:shadow-lg transition-shadow border-0 bg-card">
@@ -147,7 +146,7 @@ export function EmergencyServices() {
                 Emergency Conditions We Handle
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {emergencyServices.map((service, index) => (
+                {emergencyServices.map((service) => (
                   <div
                     key={service}
                     className="flex items-center space-x-3 p-3 rounded-lg bg-muted/50"

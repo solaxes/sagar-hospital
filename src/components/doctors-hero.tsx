@@ -10,7 +10,6 @@ import {
   Activity,
   Cross,
   Pill,
-  Shield,
 } from "lucide-react";
 
 export function DoctorsHero() {

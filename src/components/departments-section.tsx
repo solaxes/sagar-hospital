@@ -7,7 +7,6 @@ import {
   Heart,
   Baby,
   Brain,
-  Bone,
   Activity,
   Microscope,
   Shield,

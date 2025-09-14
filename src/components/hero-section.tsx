@@ -14,13 +14,45 @@ import {
   Pill,
 } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export function HeroSection() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
   const springY = useSpring(mouseY, { damping: 20 });
+
+  // Create transforms outside of render
+  const dotTransformX = useTransform(springX, (value) => (value - 960) * 0.015);
+  const dotTransformY = useTransform(springY, (value) => (value - 540) * 0.015);
+
+  // Additional transforms for other elements
+  const shapeTransformX = useTransform(
+    springX,
+    (value) => (value - 960) * 0.005
+  );
+  const shapeTransformY = useTransform(
+    springY,
+    (value) => (value - 540) * 0.005
+  );
+  const ringTransformX = useTransform(springX, (value) => (value - 960) * 0.01);
+  const ringTransformY = useTransform(springY, (value) => (value - 540) * 0.01);
+  const particleTransformX = useTransform(
+    springX,
+    (value) => (value - 960) * 0.008
+  );
+  const particleTransformY = useTransform(
+    springY,
+    (value) => (value - 540) * 0.008
+  );
+  const waveTransformX = useTransform(
+    springX,
+    (value) => (value - 960) * 0.003
+  );
+  const waveTransformY = useTransform(
+    springY,
+    (value) => (value - 540) * 0.003
+  );
 
   // Generate stable dot positions - Increased density
   const dotPositions = Array.from({ length: 60 }, (_, index) => ({
@@ -138,10 +170,10 @@ export function HeroSection() {
             width: `${dot.size}rem`,
             height: `${dot.size}rem`,
             opacity: dot.opacity,
+            x: dotTransformX,
+            y: dotTransformY,
           }}
           animate={{
-            x: useTransform(springX, (value) => (value - 960) * dot.speed),
-            y: useTransform(springY, (value) => (value - 540) * dot.speed),
             scale: [1, 1.5, 1, 0.8, 1],
             rotate: [0, 180, 360],
             opacity: [
@@ -181,16 +213,10 @@ export function HeroSection() {
             top: `${(index * 67 + 30) % 100}%`,
             width: `${2 + (index % 3) * 1.5}rem`,
             height: `${2 + (index % 3) * 1.5}rem`,
+            x: shapeTransformX,
+            y: shapeTransformY,
           }}
           animate={{
-            x: useTransform(
-              springX,
-              (value) => (value - 960) * (0.005 + index * 0.003)
-            ),
-            y: useTransform(
-              springY,
-              (value) => (value - 540) * (0.005 + index * 0.003)
-            ),
             scale: [0.5, 1.2, 0.8, 1],
             rotate: [0, 90, 180, 270, 360],
             opacity: [0.2, 0.6, 0.3, 0.5],
@@ -225,16 +251,10 @@ export function HeroSection() {
             top: `${(index * 40 + 20) % 100}%`,
             width: `${3 + index * 2}rem`,
             height: `${3 + index * 2}rem`,
+            x: ringTransformX,
+            y: ringTransformY,
           }}
           animate={{
-            x: useTransform(
-              springX,
-              (value) => (value - 960) * (0.01 + index * 0.005)
-            ),
-            y: useTransform(
-              springY,
-              (value) => (value - 540) * (0.01 + index * 0.005)
-            ),
             scale: [1, 2, 1],
             opacity: [0.3, 0.8, 0.3],
           }}
@@ -256,16 +276,10 @@ export function HeroSection() {
             top: `${(index * 31 + 8) % 100}%`,
             width: `${0.4 + (index % 3) * 0.2}rem`,
             height: `${0.4 + (index % 3) * 0.2}rem`,
+            x: particleTransformX,
+            y: particleTransformY,
           }}
           animate={{
-            x: useTransform(
-              springX,
-              (value) => (value - 960) * (0.008 + index * 0.002)
-            ),
-            y: useTransform(
-              springY,
-              (value) => (value - 540) * (0.008 + index * 0.002)
-            ),
             scale: [0.5, 1.5, 0.8, 1.2, 0.5],
             opacity: [0.3, 0.9, 0.4, 0.7, 0.3],
           }}
@@ -294,16 +308,10 @@ export function HeroSection() {
             top: `${(index * 25 + 20) % 100}%`,
             width: `${20 + (index % 4) * 10}px`,
             height: "1px",
+            x: waveTransformX,
+            y: waveTransformY,
           }}
           animate={{
-            x: useTransform(
-              springX,
-              (value) => (value - 960) * (0.003 + index * 0.001)
-            ),
-            y: useTransform(
-              springY,
-              (value) => (value - 540) * (0.003 + index * 0.001)
-            ),
             scaleX: [0.5, 1.5, 0.8, 1.2, 0.5],
             opacity: [0.2, 0.8, 0.3, 0.6, 0.2],
           }}

@@ -110,11 +110,11 @@ export function ValuesSection() {
             </h3>
           </div>
           <blockquote className="text-white/90 text-lg md:text-xl italic mb-6 max-w-4xl mx-auto">
-            "We pledge to provide exceptional healthcare services with
+            &ldquo;We pledge to provide exceptional healthcare services with
             compassion, integrity, and excellence. Your health and well-being
             are our top priorities, and we are committed to delivering the
             highest quality care in a safe, comfortable, and respectful
-            environment."
+            environment.&rdquo;
           </blockquote>
           <div className="flex flex-wrap justify-center gap-6 text-white/80">
             <div className="flex items-center space-x-2">

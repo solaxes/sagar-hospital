@@ -3,14 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Camera,
-  MapPin,
-  Users,
-  Shield,
-  Heart,
-  Stethoscope,
-} from "lucide-react";
+import { Camera, Users, Shield, Heart, Stethoscope } from "lucide-react";
 
 const galleryCategories = [
   {

@@ -104,7 +104,7 @@ export function TestimonialsSection() {
 
                   {/* Testimonial Text */}
                   <blockquote className="text-muted-foreground mb-6 italic">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </blockquote>
 
                   {/* Patient Info */}

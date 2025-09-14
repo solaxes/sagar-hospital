@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
   MapPin,
   Navigation,
@@ -171,7 +170,7 @@ export function LocationMap() {
                 </div>
 
                 <div className="space-y-4">
-                  {directions.map((direction, index) => (
+                  {directions.map((direction) => (
                     <div
                       key={direction.from}
                       className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
@@ -270,7 +269,7 @@ export function LocationMap() {
                   Nearby Landmarks
                 </h3>
                 <div className="grid grid-cols-1 gap-3">
-                  {nearbyLandmarks.map((landmark, index) => (
+                  {nearbyLandmarks.map((landmark) => (
                     <div
                       key={landmark}
                       className="flex items-center space-x-3 p-3 bg-muted/50 rounded-lg"

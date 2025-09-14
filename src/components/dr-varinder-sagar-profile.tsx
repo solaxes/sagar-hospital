@@ -9,14 +9,11 @@ import { Separator } from "@/components/ui/separator";
 import {
   Heart,
   Award,
-  Calendar,
   MapPin,
   Phone,
-  Mail,
   Stethoscope,
   Users,
   BookOpen,
-  Star,
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
@@ -150,8 +147,8 @@ export function DrVarinderSagarProfile() {
                   Dr. Varinder Sagar is a highly experienced urologist with
                   extensive expertise in minimally invasive urological
                   surgeries, kidney stone treatment, and prostate care. He has
-                  been instrumental in establishing the hospital's reputation
-                  for excellence in urological care.
+                  been instrumental in establishing the hospital&apos;s
+                  reputation for excellence in urological care.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
                   With over 15 years of experience, Dr. Sagar has performed

@@ -20,7 +20,6 @@ const sizeClasses = {
 
 export function DoctorImagePlaceholder({
   name,
-  specialty,
   size = "lg",
   className = "",
   showPlaceholder = true,

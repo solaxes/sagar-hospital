@@ -103,7 +103,7 @@ export function ContactForm() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a question or need to schedule an appointment? Fill out the
-            form below and we'll get back to you as soon as possible.
+            form below and we&apos;ll get back to you as soon as possible.
           </p>
         </motion.div>
 
@@ -126,7 +126,7 @@ export function ContactForm() {
                       Contact Form
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      We'll respond within 24 hours
+                      We&apos;ll respond within 24 hours
                     </p>
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export function ContactForm() {
                 </div>
 
                 <div className="space-y-4">
-                  {responseTimes.map((item, index) => (
+                  {responseTimes.map((item) => (
                     <div
                       key={item.method}
                       className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
@@ -239,7 +239,7 @@ export function ContactForm() {
                   <Phone className="h-12 w-12 mx-auto mb-4" />
                   <h3 className="text-xl font-bold mb-2">Medical Emergency?</h3>
                   <p className="text-white/90 mb-4">
-                    Don't wait for a response. Call our emergency number
+                    Don&apos;t wait for a response. Call our emergency number
                     immediately.
                   </p>
                   <div className="text-2xl font-bold mb-4">+91 98881 06555</div>
@@ -267,7 +267,9 @@ export function ContactForm() {
                     • For urgent medical concerns, please call our emergency
                     number
                   </p>
-                  <p>• We'll confirm your appointment via phone or email</p>
+                  <p>
+                    • We&apos;ll confirm your appointment via phone or email
+                  </p>
                   <p>
                     • Insurance and payment information can be discussed during
                     your visit

@@ -9,14 +9,10 @@ import { Separator } from "@/components/ui/separator";
 import {
   Heart,
   Award,
-  Calendar,
   MapPin,
   Phone,
-  Mail,
-  Stethoscope,
   Users,
   BookOpen,
-  Star,
   ArrowLeft,
   Baby,
 } from "lucide-react";
@@ -149,7 +145,7 @@ export function DrMaltiSagarProfile() {
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   Dr. Malti Sagar is a dedicated gynecologist specializing in
-                  women's health, high-risk pregnancy care, and advanced
+                  women&apos;s health, high-risk pregnancy care, and advanced
                   gynecological procedures. She has been providing exceptional
                   care to women in the community with compassion and expertise.
                 </p>

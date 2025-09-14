@@ -113,12 +113,12 @@ export function ContactInfo() {
 
         {/* Contact Methods */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {contactMethods.map((method, index) => (
+          {contactMethods.map((method) => (
             <motion.div
               key={method.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 bg-card">
@@ -177,7 +177,7 @@ export function ContactInfo() {
             Department <span className="text-hospital-primary">Contacts</span>
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            {departments.map((dept, index) => (
+            {departments.map((dept) => (
               <Card
                 key={dept.name}
                 className="border-0 bg-card hover:shadow-lg transition-shadow"
@@ -232,7 +232,7 @@ export function ContactInfo() {
                 Available Services
               </h3>
               <div className="grid grid-cols-2 gap-3">
-                {services.map((service, index) => (
+                {services.map((service) => (
                   <div key={service} className="flex items-center space-x-2">
                     <div className="h-2 w-2 bg-hospital-primary rounded-full"></div>
                     <span className="text-sm text-muted-foreground">

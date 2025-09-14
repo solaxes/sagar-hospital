@@ -12,7 +12,6 @@ import {
   Activity,
   Cross,
   Pill,
-  Stethoscope,
 } from "lucide-react";
 
 export function ContactHero() {
@@ -125,9 +124,9 @@ export function ContactHero() {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-lg text-muted-foreground"
               >
-                We're here to help you with your healthcare needs. Contact us
-                for appointments, inquiries, or emergency services. Our team is
-                ready to assist you 24/7.
+                We&apos;re here to help you with your healthcare needs. Contact
+                us for appointments, inquiries, or emergency services. Our team
+                is ready to assist you 24/7.
               </motion.p>
             </div>
 

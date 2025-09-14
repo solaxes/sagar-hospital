@@ -11,7 +11,6 @@ import {
   Award,
   Phone,
   Clock,
-  MapPin,
   Calendar,
 } from "lucide-react";
 import Link from "next/link";

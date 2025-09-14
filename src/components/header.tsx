@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Phone, Mail, Sun, Moon } from "lucide-react";
+import { Menu, Phone, Mail, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const navigation = [

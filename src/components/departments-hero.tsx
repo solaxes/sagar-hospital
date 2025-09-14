@@ -10,7 +10,6 @@ import {
   Activity,
   Cross,
   Pill,
-  Clock,
 } from "lucide-react";
 
 export function DepartmentsHero() {

@@ -10,7 +10,6 @@ import {
   Activity,
   Cross,
   Pill,
-  Stethoscope,
 } from "lucide-react";
 
 export function GalleryHero() {

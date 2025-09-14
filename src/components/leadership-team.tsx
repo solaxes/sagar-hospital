@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Stethoscope, Award, Phone } from "lucide-react";
+import { Heart, Award } from "lucide-react";
 
 const leaders = [
   {
@@ -123,7 +123,7 @@ export function LeadershipTeam() {
                                 Philosophy
                               </h4>
                               <p className="text-sm text-muted-foreground italic">
-                                "{leader.philosophy}"
+                                &ldquo;{leader.philosophy}&rdquo;
                               </p>
                             </div>
                           </div>
@@ -171,10 +171,10 @@ export function LeadershipTeam() {
             </h3>
           </div>
           <blockquote className="text-white/90 text-lg md:text-xl italic mb-6 max-w-4xl mx-auto">
-            "We are committed to providing world-class healthcare services with
-            compassion and excellence. Our vision is to make quality healthcare
-            accessible to everyone in our community, and we work tirelessly
-            every day to achieve this goal."
+            &ldquo;We are committed to providing world-class healthcare services
+            with compassion and excellence. Our vision is to make quality
+            healthcare accessible to everyone in our community, and we work
+            tirelessly every day to achieve this goal.&rdquo;
           </blockquote>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="text-white/80">
